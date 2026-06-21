@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华体会 · 信息卡片介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f8fa;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #1e2632;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.2rem;
+    }
+
+    .page {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    /* 主视觉 — 卡片化标识 */
+    .hero-card {
+      background: white;
+      border-radius: 28px;
+      padding: 2.8rem 2rem;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 20, 40, 0.04);
+      margin-bottom: 2rem;
+    }
+
+    .hero-card h1 {
+      font-size: 2.6rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      background: linear-gradient(145deg, #0b1b33, #2f4a6e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-card .sub {
+      margin-top: 0.75rem;
+      font-size: 1.05rem;
+      color: #58718e;
+      letter-spacing: 0.01em;
+      border-top: 1px solid #eef1f5;
+      padding-top: 1rem;
+    }
+
+    /* 通用卡片组 */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      margin: 2rem 0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 22px;
+      padding: 1.8rem 1.8rem 1.8rem 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      border: 1px solid #edf0f5;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0, 20, 40, 0.05);
+    }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 550;
+      font-size: 1.25rem;
+      color: #142433;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-title .icon {
+      font-size: 1.3rem;
+      opacity: 0.8;
+    }
+
+    .card p, .card li {
+      color: #2f4057;
+      font-size: 0.96rem;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 0.4rem;
+    }
+
+    .card li {
+      padding: 0.3rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .card li::before {
+      content: "·";
+      position: absolute;
+      left: 0.2rem;
+      color: #7393b3;
+      font-weight: bold;
+    }
+
+    /* 自然链接段落 */
+    .link-note {
+      background: white;
+      border-radius: 22px;
+      padding: 1.8rem 2rem;
+      border: 1px solid #edf0f5;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      margin: 1.6rem 0;
+    }
+
+    .link-note p {
+      font-size: 1rem;
+      color: #1f2b3a;
+      line-height: 1.7;
+    }
+
+    .link-note a {
+      color: #1f5380;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .link-note a:hover {
+      border-bottom-color: #1f5380;
+    }
+
+    /* FAQ 摘要 — 精简卡片 */
+    .faq-mini {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      margin: 2rem 0 0.5rem;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 18px;
+      padding: 1rem 1.6rem;
+      border: 1px solid #eef2f7;
+    }
+
+    .faq-item strong {
+      font-weight: 550;
+      color: #0a1c2e;
+      display: block;
+      margin-bottom: 0.15rem;
+      font-size: 0.95rem;
+    }
+
+    .faq-item span {
+      color: #3f5470;
+      font-size: 0.92rem;
+    }
+
+    .footer-note {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.82rem;
+      color: #8b9eb5;
+      border-top: 1px solid #e0e6ee;
+      padding-top: 1.8rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 500px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .hero-card {
+        padding: 2rem 1.2rem;
+      }
+      .hero-card h1 {
+        font-size: 2rem;
+      }
+      .card, .link-note {
+        padding: 1.4rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- 主视觉卡片 -->
+    <div class="hero-card">
+      <h1>华体会</h1>
+      <div class="sub">信息卡片 · 主题层 &nbsp;|&nbsp; 关注内容本身</div>
+    </div>
+
+    <!-- 用途卡片 -->
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-title">
+          <span class="icon">📌</span> 用途与场景
+        </div>
+        <ul>
+          <li>日常信息聚合与轻量参考，适合快速浏览主题动态</li>
+          <li>围绕特定关键词的内容索引，帮助梳理结构化的背景资料</li>
+          <li>面向兴趣社群或项目调研，提供简洁的上下文入口</li>
+          <li>内容组织上偏向卡片化，降低信息过载，提升阅读效率</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <span class="icon">👥</span> 适合人群
+        </div>
+        <ul>
+          <li>希望快速了解某一主题梗概的阅读者</li>
+          <li>需要将关键词嵌入自然叙述的内容创作者</li>
+          <li>偏好极简界面、高信息密度的使用者</li>
+          <li>对信息层级敏感，习惯从卡片模块中提取要点的分析型读者</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 自然链接段落（嵌入关键词） -->
+    <div class="link-note">
+      <p>
+        无论是梳理背景脉络，还是获取某个概念的直观印象，许多用户会首先查找与关键词相关的可靠信息源。<a href="https://index--hth.com">华体会</a>在内容组织上采用了偏向主题聚合的方式，将分散的素材归类到明确的卡片单元中，从而缩短从“看到关键词”到“理解上下文”之间的距离。这种设计并非追求大而全，而是强调在有限篇幅内呈现足够清晰的轮廓。
+      </p>
+      <p style="margin-top: 0.7rem;">
+        与此同时，卡片化的结构也适合后续扩展——每个模块都可以独立更新，不影响整体阅读节奏。对于习惯快速扫描的受众，这种布局能有效减少无关干扰。
+      </p>
+    </div>
+
+    <!-- FAQ 摘要卡片组 -->
+    <div class="faq-mini">
+      <div class="faq-item">
+        <strong>❓ FAQ 摘要 · 信息密度</strong>
+        <span>卡片式页面如何控制信息量？每个模块限定在 3–5 个要点内，标题层级明确，无冗余装饰。</span>
+      </div>
+      <div class="faq-item">
+        <strong>❓ 是否适合移动端阅读？</strong>
+        <span>窄正文宽度、自适应内边距，手机和平板均可获得一致的极简体验。</span>
+      </div>
+      <div class="faq-item">
+        <strong>❓ 内容更新频率？</strong>
+        <span>页面本身为静态结构，但卡片与链接段落的设计使得替换内容时无需重构布局。</span>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      华体会 · 主题卡片页 &nbsp;·&nbsp; 简洁 专业
+    </div>
+
+  </div>
+</body>
+</html>
